@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 public class TestBase {
     @BeforeMethod
     public void beforeTest() {
-        System.setProperty("webdriver.chrome.driver", "~/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/chromedriver");
         DriverManager.getWebDriver();
         DriverUtils.setInitialConfiguration();
         DriverUtils.navigateToPage("https://35.234.114.2:8181");

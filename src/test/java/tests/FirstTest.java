@@ -17,8 +17,10 @@ public class FirstTest extends TestBase {
 
     @Test
     public void locationTest(){
+        //login page
         DriverUtils.navigateToPage("https://35.234.114.2:8181/faces/common/signIn.xhtml");
 
+        //login
         LoginPage loginPage = new LoginPage();
         boolean isLoggedIn = loginPage
                 .typeIntoUserNameField("JDoe")
@@ -82,7 +84,10 @@ public class FirstTest extends TestBase {
         int numberOfRowsAfterUpdate = allRows.size();
 
 
+        //check amount of rows
         assertTrue(--numberOfRowsAfterUpdate == numberOfRowsBeforeUpdate);
+
+        //check value in new row
         assertTrue(allRows.get(allRows.size() - 1).getText().contains("XX-99-99-99"));
 
         //click delete butto
@@ -109,6 +114,7 @@ public class FirstTest extends TestBase {
         WaitForElement.waitUntilElementIsVisible(allRows.get(0));
         int numberOfRowsAfterDelete = allRows.size();
 
+        //check amount of rows
         assertTrue(numberOfRowsAfterDelete == numberOfRowsBeforeUpdate);
 
 
