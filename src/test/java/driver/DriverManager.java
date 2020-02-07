@@ -16,8 +16,8 @@ public class DriverManager {
 
         if (webDriverThreadLocal.get() == null) {
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--no-sandbox");
+//            options.addArguments("--disable-dev-shm-usage");
+//            options.addArguments("--no-sandbox");
             options.addArguments("--headless", "--window-size=1920,1200", "--ignore-certificate-errors");
             options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
             options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
