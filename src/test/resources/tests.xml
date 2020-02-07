@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="ISDP TESTS" parallel="tests" thread-count="1">
+<suite name="ISDP TESTS" parallel="tests" thread-count="4">
 
     <test name="First test - locations">
         <classes>
             <class name="tests.FirstTest"/>
+        </classes>
+    </test>
+    <test name="Second test - ???">
+        <classes>
+            <class name="tests.SecondTest"/>
+        </classes>
+    </test>
+    <test name="third test - ???">
+        <classes>
+            <class name="tests.ThirdTest"/>
+        </classes>
+    </test>
+    <test name="fourth test - ???">
+        <classes>
+            <class name="tests.FourthTest"/>
         </classes>
     </test>
 
