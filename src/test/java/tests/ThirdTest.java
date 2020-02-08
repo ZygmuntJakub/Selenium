@@ -44,12 +44,12 @@ public class ThirdTest extends TestBase {
         accountEditButton.click();
 
         //insert new email
-        WebElement emailField = DriverManager.getWebDriver().findElement(By.name("EditForm:email"));
+        WebElement emailField = DriverManager.getWebDriver().findElement(By.id("EditForm:email"));
         WaitForElement.waitUntilElementIsVisible(emailField);
         emailField.sendKeys("testowy@email.com");
-        
+
         System.out.println(currentEmail);
-        System.out.println(emailField);
+        System.out.println(emailField.getText());
 
         //click save button
         WebElement saveButton = DriverManager.getWebDriver().findElement(By.name("EditForm:j_idt32"));
