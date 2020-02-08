@@ -8,6 +8,8 @@ import org.testng.annotations.Test;
 import page.objects.LoginPage;
 import waits.WaitForElement;
 
+import java.io.Console;
+
 import static org.testng.Assert.*;
 
 public class ThirdTest extends TestBase {
@@ -37,7 +39,7 @@ public class ThirdTest extends TestBase {
 
         //get current email of third account
         String currentEmail = DriverManager.getWebDriver().findElement(By.xpath("/html[1]/body[1]/div[1]/div[3]/div[1]/form[1]/table[1]/tbody[1]/tr[3]/td[4]")).getText();
-
+        System.out.println(currentEmail);
         //click edit button for third account
         WebElement accountEditButton = DriverManager.getWebDriver().findElement(By.xpath( "/html[1]/body[1]/div[1]/div[3]/div[1]/form[1]/table[1]/tbody[1]/tr[3]/td[5]/input[2]"));
         accountEditButton.click();
