@@ -24,7 +24,7 @@ public class SecondTest extends TestBase {
     private final String productWeight = "100";
 
     @Test
-    public void locationTest() throws InterruptedException {
+    public void productTest() throws InterruptedException {
         DriverUtils.navigateToPage("https://35.234.114.2:8181/faces/common/signIn.xhtml");
         driver = DriverManager.getWebDriver();
 
