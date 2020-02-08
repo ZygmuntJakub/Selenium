@@ -29,6 +29,7 @@ public class DriverManager {
     public static void disposeDriver() {
 
         webDriverThreadLocal.get().close();
+        webDriverThreadLocal.get().quit();
         webDriverThreadLocal.remove();
     }
 }
