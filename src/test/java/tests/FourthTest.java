@@ -26,8 +26,8 @@ public class FourthTest extends TestBase {
                 .isBannerAfterLoginUsername("LRey");
         assertTrue(isLoggedIn);
 
-        click(driver.findElement(By.linkText("Kontrahent")));
-        click(driver.findElement(By.linkText("Rejestracja kontrahenta")));
+        click(driver.findElement(By.xpath("//div[@id='myNavbar']/ul/li[4]/a")));
+        click(driver.findElement(By.cssSelector(".open li:nth-child(1) > a")));
         click(driver.findElement(By.id("RegisterContractorForm:contractorNumber")));
         driver.findElement(By.id("RegisterContractorForm:contractorNumber")).sendKeys("0000000000000");
         click(driver.findElement(By.id("RegisterContractorForm:contractorName")));
@@ -41,8 +41,8 @@ public class FourthTest extends TestBase {
         click(driver.findElement(By.id("RegisterContractorForm:city")));
         driver.findElement(By.id("RegisterContractorForm:city")).sendKeys("Test");
         click( driver.findElement(By.id("RegisterContractorForm:j_idt39")));
-        click(driver.findElement(By.linkText("Kontrahent")));
-        click(driver.findElement(By.linkText("Lista kontrahentów")));
+        click(driver.findElement(By.xpath("//div[@id='myNavbar']/ul/li[4]/a")));
+        click(driver.findElement(By.cssSelector(".open li:nth-child(2) > a")));
         String id = driver.findElement(By.cssSelector("tr:nth-child(1) > td:nth-child(1)")).getAttribute("textContent");
         String name = driver.findElement(By.cssSelector("tr:nth-child(1) > td:nth-child(2)")).getAttribute("textContent");
         String street = driver.findElement(By.cssSelector("tr:nth-child(1) > td:nth-child(5)")).getAttribute("textContent");
