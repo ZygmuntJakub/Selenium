@@ -4,9 +4,11 @@ import driver.DriverManager;
 import driver.DriverUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.objects.LoginPage;
+import waits.WaitForElement;
 
 import static org.testng.Assert.assertTrue;
 
@@ -23,23 +25,24 @@ public class FourthTest extends TestBase {
                 .clickOnLoginButton()
                 .isBannerAfterLoginUsername("LRey");
         assertTrue(isLoggedIn);
-        driver.findElement(By.linkText("Kontrahent")).click();
-        driver.findElement(By.linkText("Rejestracja kontrahenta")).click();
-        driver.findElement(By.id("RegisterContractorForm:contractorNumber")).click();
+
+        click(driver.findElement(By.linkText("Kontrahent")));
+        click(driver.findElement(By.linkText("Rejestracja kontrahenta")));
+        click(driver.findElement(By.id("RegisterContractorForm:contractorNumber")));
         driver.findElement(By.id("RegisterContractorForm:contractorNumber")).sendKeys("0000000000000");
-        driver.findElement(By.id("RegisterContractorForm:contractorName")).click();
+        click(driver.findElement(By.id("RegisterContractorForm:contractorName")));
         driver.findElement(By.id("RegisterContractorForm:contractorName")).sendKeys("Aa");
-        driver.findElement(By.id("RegisterContractorForm:street")).click();
+        click( driver.findElement(By.id("RegisterContractorForm:street")));
         driver.findElement(By.id("RegisterContractorForm:street")).sendKeys("Test");
-        driver.findElement(By.id("RegisterContractorForm:house")).click();
+        click(driver.findElement(By.id("RegisterContractorForm:house")));
         driver.findElement(By.id("RegisterContractorForm:house")).sendKeys("1");
-        driver.findElement(By.id("RegisterContractorForm:zip")).click();
+        click(driver.findElement(By.id("RegisterContractorForm:zip")));
         driver.findElement(By.id("RegisterContractorForm:zip")).sendKeys("90-100");
-        driver.findElement(By.id("RegisterContractorForm:city")).click();
+        click(driver.findElement(By.id("RegisterContractorForm:city")));
         driver.findElement(By.id("RegisterContractorForm:city")).sendKeys("Test");
-        driver.findElement(By.id("RegisterContractorForm:j_idt39")).click();
-        driver.findElement(By.linkText("Kontrahent")).click();
-        driver.findElement(By.linkText("Lista kontrahentów")).click();
+        click( driver.findElement(By.id("RegisterContractorForm:j_idt39")));
+        click(driver.findElement(By.linkText("Kontrahent")));
+        click(driver.findElement(By.linkText("Lista kontrahentów")));
         String id = driver.findElement(By.cssSelector("tr:nth-child(1) > td:nth-child(1)")).getAttribute("textContent");
         String name = driver.findElement(By.cssSelector("tr:nth-child(1) > td:nth-child(2)")).getAttribute("textContent");
         String street = driver.findElement(By.cssSelector("tr:nth-child(1) > td:nth-child(5)")).getAttribute("textContent");
@@ -52,7 +55,12 @@ public class FourthTest extends TestBase {
         Assert.assertEquals(house,"1");
         Assert.assertEquals(zip,"90-100");
         Assert.assertEquals(city,"Test");
-        driver.findElement(By.name("j_idt26:j_idt27:0:j_idt48")).click();
-        driver.findElement(By.name("DeleteContractorForm:j_idt30")).click();
+        click(driver.findElement(By.name("j_idt26:j_idt27:0:j_idt48")));
+        click(driver.findElement(By.name("DeleteContractorForm:j_idt30")));
+    }
+
+    private void click(WebElement webElement){
+        WaitForElement.waitUntilElementIsClickable(webElement);
+        webElement.click();
     }
 }
