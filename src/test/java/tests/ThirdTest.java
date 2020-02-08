@@ -76,7 +76,7 @@ public class ThirdTest extends TestBase {
 
         //insert old email
         WebElement emailFieldAgain = DriverManager.getWebDriver().findElement(By.id("EditForm:email"));
-        emailField.clear();
+        emailFieldAgain.clear();
         emailFieldAgain.sendKeys(currentEmail);
 
         //click save button
