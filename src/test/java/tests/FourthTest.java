@@ -24,7 +24,6 @@ public class FourthTest extends TestBase {
                 .isBannerAfterLoginUsername("LRey");
         assertTrue(isLoggedIn);
         driver.findElement(By.linkText("Kontrahent")).click();
-        driver.findElement(By.linkText("Lista Kontrahentów")).click();
         driver.findElement(By.linkText("Rejestracja kontrahenta")).click();
         driver.findElement(By.id("RegisterContractorForm:contractorNumber")).click();
         driver.findElement(By.id("RegisterContractorForm:contractorNumber")).sendKeys("0000000000000");
@@ -40,7 +39,7 @@ public class FourthTest extends TestBase {
         driver.findElement(By.id("RegisterContractorForm:city")).sendKeys("Test");
         driver.findElement(By.id("RegisterContractorForm:j_idt39")).click();
         driver.findElement(By.linkText("Kontrahent")).click();
-        driver.findElement(By.linkText("Lista Kontrahentów")).click();
+        driver.findElement(By.linkText("Lista kontrahentów")).click();
         String id = driver.findElement(By.cssSelector("tr:nth-child(1) > td:nth-child(1)")).getAttribute("textContent");
         String name = driver.findElement(By.cssSelector("tr:nth-child(1) > td:nth-child(2)")).getAttribute("textContent");
         String street = driver.findElement(By.cssSelector("tr:nth-child(1) > td:nth-child(5)")).getAttribute("textContent");
