@@ -65,17 +65,15 @@ public class ThirdTest extends TestBase {
         assertNotEquals(currentEmailAfterChanges, currentEmail);
         assertEquals(currentEmailAfterChanges, "testowy@email.com");
 
-        assertTrue(false);
+        //click edit button for third account once again
+        accountEditButton.click();
 
-//        //click edit button for third account once again
-//        accountEditButton.click();
-//
-//        //insert new email
-//        WaitForElement.waitUntilElementIsVisible(emailField);
-//        emailField.sendKeys(currentEmail);
-//
-//        //click save button
-//        WaitForElement.waitUntilElementIsVisible(createButton);
-//        createButton.click();
+        //insert new email
+        WaitForElement.waitUntilElementIsVisible(emailField);
+        emailField.sendKeys(currentEmail);
+
+        //click save button
+        WaitForElement.waitUntilElementIsVisible(createButton);
+        createButton.click();
     }
 }
