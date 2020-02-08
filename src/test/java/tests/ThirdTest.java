@@ -65,6 +65,8 @@ public class ThirdTest extends TestBase {
         assertNotEquals(currentEmailAfterChanges, currentEmail);
         assertEquals(currentEmailAfterChanges, "testowy@email.com");
 
+        assertTrue(false);
+
 //        //click edit button for third account once again
 //        accountEditButton.click();
 //
