@@ -53,7 +53,6 @@ public class ThirdTest extends TestBase {
         createButton.click();
 
         //click dropdown once again
-        WaitForElement.waitUntilElementIsVisible(dropdownAccounts);
         dropdownAccounts.click();
 
         //click list accounts once again
