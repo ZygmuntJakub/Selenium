@@ -53,8 +53,6 @@ public class FourthTest extends TestBase {
         Assert.assertEquals(house,"1");
         Assert.assertEquals(zip,"90-100");
         Assert.assertEquals(city,"Test");
-        Thread.sleep(10_000);
-        assertTrue(true);
         driver.findElement(By.name("j_idt26:j_idt27:0:j_idt48")).click();
         driver.findElement(By.name("DeleteContractorForm:j_idt30")).click();
     }
