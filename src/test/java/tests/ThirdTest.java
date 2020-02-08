@@ -48,15 +48,18 @@ public class ThirdTest extends TestBase {
         emailField.sendKeys("testowy@email.com");
 
         //click save button
-        WebElement createButton = DriverManager.getWebDriver().findElement(By.xpath("/html[1]/body[1]/div[1]/div[3]/div[1]/form[1]/input[2]"));
-        WaitForElement.waitUntilElementIsVisible(createButton);
-        createButton.click();
+        WebElement saveButton = DriverManager.getWebDriver().findElement(By.xpath("/html[1]/body[1]/div[1]/div[3]/div[1]/form[1]/input[2]"));
+        WaitForElement.waitUntilElementIsVisible(saveButton);
+        saveButton.click();
 
         //click dropdown once again
-        dropdownAccounts.click();
+        WebElement dropdownAccountsAgain = DriverManager.getWebDriver().findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[2]/ul[1]/li[4]/a[1]"));
+        WaitForElement.waitUntilElementIsVisible(dropdownAccountsAgain);
+        dropdownAccountsAgain.click();
 
         //click list accounts once again
-        accountButton.click();
+        WebElement accountButtonAgain = DriverManager.getWebDriver().findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[1]/div[2]/ul[1]/li[4]/ul[1]/li[2]/a[1]"));
+        accountButtonAgain.click();
 
         //get current email of third account
         String currentEmailAfterChanges = DriverManager.getWebDriver().findElement(By.xpath("/html[1]/body[1]/div[1]/div[3]/div[1]/form[1]/table[1]/tbody[1]/tr[3]/td[4]")).getText();
@@ -65,14 +68,17 @@ public class ThirdTest extends TestBase {
         assertEquals(currentEmailAfterChanges, "testowy@email.com");
 
         //click edit button for third account once again
-        accountEditButton.click();
+        WebElement accountEditButtonAgain = DriverManager.getWebDriver().findElement(By.xpath( "/html[1]/body[1]/div[1]/div[3]/div[1]/form[1]/table[1]/tbody[1]/tr[3]/td[5]/input[2]"));
+        accountEditButtonAgain.click();
 
         //insert new email
-        WaitForElement.waitUntilElementIsVisible(emailField);
+        WebElement emailFieldAgain = DriverManager.getWebDriver().findElement(By.xpath("/html[1]/body[1]/div[1]/div[3]/div[1]/form[1]/table[1]/tbody[1]/tr[4]/td[2]/input[1]"));
+        WaitForElement.waitUntilElementIsVisible(emailFieldAgain);
         emailField.sendKeys(currentEmail);
 
         //click save button
-        WaitForElement.waitUntilElementIsVisible(createButton);
-        createButton.click();
+        WebElement saveButtonAgain = DriverManager.getWebDriver().findElement(By.xpath("/html[1]/body[1]/div[1]/div[3]/div[1]/form[1]/input[2]"));
+        WaitForElement.waitUntilElementIsVisible(saveButtonAgain);
+        saveButtonAgain.click();
     }
 }
