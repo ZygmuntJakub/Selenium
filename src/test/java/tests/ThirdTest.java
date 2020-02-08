@@ -47,10 +47,7 @@ public class ThirdTest extends TestBase {
         WebElement emailField = DriverManager.getWebDriver().findElement(By.id("EditForm:email"));
         emailField.clear();
         emailField.sendKeys( "testowy@email.com");
-
-        System.out.println(currentEmail);
-        System.out.println(emailField.getAttribute("value"));
-
+        
         //click save button
         WebElement saveButton = DriverManager.getWebDriver().findElement(By.name("EditForm:j_idt32"));
         saveButton.click();
