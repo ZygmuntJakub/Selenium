@@ -29,12 +29,13 @@ public class SecondTest extends TestBase {
         driver = DriverManager.getWebDriver();
 
         //Logowanie użytkownika
-        driver.findElement(By.linkText("Logowanie")).click();
-        driver.findElement(By.name("j_username")).click();
-        driver.findElement(By.name("j_username")).sendKeys("LRey");
-        driver.findElement(By.name("j_password")).click();
-        driver.findElement(By.name("j_password")).sendKeys("P@ssw0rd");
-        driver.findElement(By.cssSelector("input:nth-child(2)")).click();
+        LoginPage loginPage = new LoginPage();
+        boolean isLoggedIn = loginPage
+                .typeIntoUserNameField("LRey")
+                .typeIntoPasswordField("P@ssw0rd")
+                .clickOnLoginButton()
+                .isBannerAfterLoginUsername("LRey");
+        assertTrue(isLoggedIn);
 
         //Otworzenie listy produktow i ich policzenie
         driver.findElement(By.linkText("Produkt")).click();
