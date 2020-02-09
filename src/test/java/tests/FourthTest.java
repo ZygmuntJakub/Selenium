@@ -26,7 +26,7 @@ public class FourthTest extends TestBase {
                 .isBannerAfterLoginUsername("LRey");
         assertTrue(isLoggedIn);
 
-        /*click(driver.findElement(By.xpath("//div[@id='myNavbar']/ul/li[4]/a")));
+        click(driver.findElement(By.xpath("//div[@id='myNavbar']/ul/li[4]/a")));
         click(driver.findElement(By.cssSelector(".open li:nth-child(1) > a")));
         click(driver.findElement(By.id("RegisterContractorForm:contractorNumber")));
         driver.findElement(By.id("RegisterContractorForm:contractorNumber")).sendKeys("0000000000000");
@@ -40,7 +40,7 @@ public class FourthTest extends TestBase {
         driver.findElement(By.id("RegisterContractorForm:zip")).sendKeys("90-100");
         click(driver.findElement(By.id("RegisterContractorForm:city")));
         driver.findElement(By.id("RegisterContractorForm:city")).sendKeys("Test");
-        click(driver.findElement(By.id("RegisterContractorForm:j_idt39")));
+        click(driver.findElement(By.xpath("//form[@id='RegisterContractorForm']/input[2]")));
         click(driver.findElement(By.xpath("//div[@id='myNavbar']/ul/li[4]/a")));
         click(driver.findElement(By.cssSelector(".open li:nth-child(2) > a")));
         String id = driver.findElement(By.cssSelector("tr:nth-child(1) > td:nth-child(1)")).getAttribute("textContent");
@@ -56,7 +56,7 @@ public class FourthTest extends TestBase {
         Assert.assertEquals(zip,"90-100");
         Assert.assertEquals(city,"Test");
         click(driver.findElement(By.name("j_idt26:j_idt27:0:j_idt48")));
-        click(driver.findElement(By.name("DeleteContractorForm:j_idt30")));*/
+        click(driver.findElement(By.name("DeleteContractorForm:j_idt30")));
     }
 
     private void click(WebElement webElement){
