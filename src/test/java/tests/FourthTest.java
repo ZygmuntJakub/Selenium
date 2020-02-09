@@ -57,6 +57,10 @@ public class FourthTest extends TestBase {
         Assert.assertEquals(city,"Test");
         click(driver.findElement(By.name("j_idt26:j_idt27:0:j_idt48")));
         click(driver.findElement(By.name("DeleteContractorForm:j_idt30")));
+        click(driver.findElement(By.xpath("//div[@id='myNavbar']/ul/li[4]/a")));
+        click(driver.findElement(By.cssSelector(".open li:nth-child(2) > a")));
+        id = driver.findElement(By.cssSelector("tr:nth-child(1) > td:nth-child(1)")).getAttribute("textContent");
+        Assert.assertNotEquals(id, "0000000000000");
     }
 
     private void click(WebElement webElement){
