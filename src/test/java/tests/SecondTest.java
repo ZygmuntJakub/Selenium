@@ -38,13 +38,20 @@ public class SecondTest extends TestBase {
         assertTrue(isLoggedIn);
 
         //Otworzenie listy produktow i ich policzenie
-        driver.findElement(By.linkText("Produkt")).click();
-        driver.findElement(By.linkText("Lista produktów")).click();
+        WebElement dropdownProducts = driver.findElement(By.cssSelector(".dropdown:nth-child(3) > .dropdown-toggle"));
+        WaitForElement.waitUntilElementIsVisible(dropdownProducts);
+        dropdownProducts.click();
+        WebElement productsButton = driver.findElement(By.cssSelector(".open li:nth-child(2) > a"));
+        productsButton.click();
+
         int startRows = DriverManager.getWebDriver().findElements(By.tagName("tr")).size();
 
         //Utworzenie nowego produktu
-        driver.findElement(By.linkText("Produkt")).click();
-        driver.findElement(By.linkText("Utwórz nowy produkt")).click();
+        dropdownProducts = driver.findElement(By.cssSelector(".dropdown:nth-child(3) > .dropdown-toggle"));
+        WaitForElement.waitUntilElementIsVisible(dropdownProducts);
+        dropdownProducts.click();
+        productsButton = driver.findElement(By.cssSelector(".open li:nth-child(1) > a"));
+        productsButton.click();
         driver.findElement(By.id("CreateProductForm:productSymbol")).click();
         driver.findElement(By.id("CreateProductForm:productSymbol")).sendKeys(productID);
         driver.findElement(By.id("CreateProductForm:description")).click();
@@ -57,8 +64,12 @@ public class SecondTest extends TestBase {
         driver.findElement(By.name("CreateProductForm:j_idt35")).click();
 
         //Otworzenie listy i ponowne przeliczenie
-        driver.findElement(By.linkText("Produkt")).click();
-        driver.findElement(By.linkText("Lista produktów")).click();
+        dropdownProducts = driver.findElement(By.cssSelector(".dropdown:nth-child(3) > .dropdown-toggle"));
+        WaitForElement.waitUntilElementIsVisible(dropdownProducts);
+        dropdownProducts.click();
+        productsButton = driver.findElement(By.cssSelector(".open li:nth-child(2) > a"));
+        productsButton.click();
+
         int afterInsertRows = DriverManager.getWebDriver().findElements(By.tagName("tr")).size();
 
         //Sprawdzenie czy liczba produktow zwiekszyla sie o 1
@@ -82,8 +93,11 @@ public class SecondTest extends TestBase {
         assertTrue(readDelicate.equals("true"));
 
         // Otworzenie ponownie listy produktow i usuniecie dodane produktu
-        driver.findElement(By.linkText("Produkt")).click();
-        driver.findElement(By.linkText("Lista produktów")).click();
+        dropdownProducts = driver.findElement(By.cssSelector(".dropdown:nth-child(3) > .dropdown-toggle"));
+        WaitForElement.waitUntilElementIsVisible(dropdownProducts);
+        dropdownProducts.click();
+        productsButton = driver.findElement(By.cssSelector(".open li:nth-child(2) > a"));
+        productsButton.click();
         productTable = driver.findElement(By.className("table"));
         productList = productTable.findElement(By.tagName("tbody")).findElements(By.tagName("tr"));
         productList.get(0).findElements(By.tagName("input")).get(2).click();
